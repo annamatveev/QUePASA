@@ -11,32 +11,29 @@
 
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from 'react-vertical-timeline-component';
 import messages from './messages';
 import 'react-vertical-timeline-component/style.min.css';
+import ActivityStreamView from '../../components/ActivityStreamView';
 
-const activitiesMock = [
+const activities = [
   {
     type: 1,
     description: 'hiii',
-    team: 1,
+    department: 1,
     name: 'Anna',
     date: '2018',
   },
   {
     type: 2,
     description: 'holaaa',
-    team: 2,
+    department: 2,
     name: 'Elad',
     date: '2018',
   },
   {
     type: 3,
     description: 'helloooo',
-    team: 3,
+    department: 3,
     name: 'Daniel',
     date: '2018',
   },
@@ -48,26 +45,7 @@ export default class HomePage extends React.PureComponent {
     return (
       <div>
         <FormattedMessage {...messages.header} />
-        <br />
-        <VerticalTimeline>
-          {activitiesMock.map(({ type, description, team, name, date }) => (
-            <VerticalTimelineElement
-              className="vertical-timeline-element--work"
-              date={date}
-              iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-              icon={
-                <div>
-                  {type}
-                  <br />
-                  {team}
-                </div>
-              }
-            >
-              <div>{description}</div>
-              <div>{name}</div>
-            </VerticalTimelineElement>
-          ))}
-        </VerticalTimeline>
+        <ActivityStreamView activities={activities} />
       </div>
     );
   }
