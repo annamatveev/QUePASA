@@ -13,9 +13,16 @@ const ngrok =
     : false;
 const { resolve } = require('path');
 const app = express();
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
+const routes = require('./routes');
+const { subscribeNewActivities } = require('./activities');
 
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
 // app.use('/api', myApi);
+
+app.use('/api', routes);
+subscribeNewActivities(activity => io.emit('new activity', activity));
 
 // In production we need to pass these values in instead of relying on webpack
 setup(app, {
