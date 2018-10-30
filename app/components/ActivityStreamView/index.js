@@ -30,6 +30,7 @@ export class ActivityStreamView extends React.PureComponent {
   }
 
   render() {
+    console.log(this.props);
     const { activities } = this.props;
 
     return (

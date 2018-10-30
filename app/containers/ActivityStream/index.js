@@ -8,9 +8,12 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import injectSaga from 'utils/injectSaga';
+import injectReducer from 'utils/injectReducer';
 import ActivityStreamView from 'components/ActivityStreamView';
 import saga from './saga';
 import { loadActivityData } from './actions';
+import reducer from './reducer';
+
 import {
   makeSelectActivityData,
   makeSelectLoading,
@@ -34,8 +37,10 @@ const withConnect = connect(
   mapDispatchToProps,
 );
 const withSaga = injectSaga({ key: 'activityStream', saga });
+const withReducer = injectReducer({ key: 'activityStream', reducer });
 
 export default compose(
+  withReducer,
   withSaga,
   withConnect,
 )(ActivityStreamView);

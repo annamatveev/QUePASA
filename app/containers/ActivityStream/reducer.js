@@ -9,8 +9,8 @@ import {
 const initialState = fromJS({
   loading: false,
   error: false,
-  activities: false,
-});
+  activities: {},
+}).set('activities', []);
 
 function appReducer(state = initialState, action) {
   switch (action.type) {
@@ -18,7 +18,7 @@ function appReducer(state = initialState, action) {
       return state
         .set('loading', true)
         .set('error', false)
-        .setIn('activities', false);
+        .setIn('activities', []);
     case LOAD_ACTIVITY_DATA_SUCCESS:
       return state.set('activities', action.activities).set('loading', false);
     case LOAD_ACTIVITY_DATA_ERROR:

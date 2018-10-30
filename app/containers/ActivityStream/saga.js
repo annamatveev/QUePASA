@@ -1,7 +1,7 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { LOAD_ACTIVITY_DATA } from 'containers/App/constants';
-
 import request from 'utils/request';
+import { LOAD_ACTIVITY_DATA } from './constants';
+
 import { ActivityDataLoaded, ActivityDataLoadingError } from './actions';
 
 export function* getActivities() {
