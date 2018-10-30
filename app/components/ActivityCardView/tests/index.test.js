@@ -2,9 +2,9 @@
 // import { mount } from 'enzyme';
 // import { enzymeFind } from 'styled-components/test-utils';
 
-// import ActivityView from '../index';
+// import ActivityCardView from '../index';
 
-describe('<ActivityView />', () => {
+describe('<ActivityCardView />', () => {
   it('Expect to have unit tests specified', () => {
     expect(true).toEqual(false);
   });

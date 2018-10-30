@@ -1,6 +1,6 @@
 /**
  *
- * Asynchronously loads the component for ActivityView
+ * Asynchronously loads the component for ActivityCardView
  *
  */
 
