@@ -9,6 +9,18 @@ import ActivityView from '../ActivityCardView';
 import ActivityIconView from '../ActivityIconView';
 
 function ActivityStreamView({ activities }) {
+  function generateDepartmentColor(department) {
+    switch (department) {
+      case 1:
+        return '#f44336';
+      case 2:
+        return '#3f51b5';
+      case 3:
+        return '#00b341';
+      default:
+        return '#673ab7';
+    }
+  }
   return (
     <VerticalTimeline>
       {console.log(activities.activities)}
@@ -16,7 +28,10 @@ function ActivityStreamView({ activities }) {
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
           date={date}
-          iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+          iconStyle={{
+            background: generateDepartmentColor(department),
+            color: 'black',
+          }}
           icon={<ActivityIconView type={type} department={department} />}
         >
           <ActivityView description={description} name={name} />
