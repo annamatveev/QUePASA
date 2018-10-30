@@ -88,6 +88,7 @@
     "redux-saga": "0.16.2",
     "reselect": "4.0.0",
     "sanitize.css": "4.1.0",
+    "socket.io": "^2.1.1",
     "styled-components": "4.0.2",
     "warning": "4.0.2"
   },
