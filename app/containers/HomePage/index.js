@@ -11,15 +11,64 @@
 
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from 'react-vertical-timeline-component';
 import messages from './messages';
+import 'react-vertical-timeline-component/style.min.css';
+
+const activitiesMock = [
+  {
+    type: 1,
+    description: 'hiii',
+    team: 1,
+    name: 'Anna',
+    date: '2018',
+  },
+  {
+    type: 2,
+    description: 'holaaa',
+    team: 2,
+    name: 'Elad',
+    date: '2018',
+  },
+  {
+    type: 3,
+    description: 'helloooo',
+    team: 3,
+    name: 'Daniel',
+    date: '2018',
+  },
+];
 
 /* eslint-disable react/prefer-stateless-function */
 export default class HomePage extends React.PureComponent {
   render() {
     return (
-      <h1>
+      <div>
         <FormattedMessage {...messages.header} />
-      </h1>
+        <br />
+        <VerticalTimeline>
+          {activitiesMock.map(({ type, description, team, name, date }) => (
+            <VerticalTimelineElement
+              className="vertical-timeline-element--work"
+              date={date}
+              iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+              icon={
+                <div>
+                  {type}
+                  <br />
+                  {team}
+                </div>
+              }
+            >
+              <div>{description}</div>
+              <div>{name}</div>
+            </VerticalTimelineElement>
+          ))}
+        </VerticalTimeline>
+      </div>
     );
   }
 }
