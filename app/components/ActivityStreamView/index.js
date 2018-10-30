@@ -5,11 +5,14 @@ import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component/dist-es6';
-import ActivityView from '../ActivityCardView';
+import ActivityCardView from '../ActivityCardView';
 import ActivityIconView from '../ActivityIconView';
 
-function ActivityStreamView({ activities }) {
-  function generateDepartmentColor(department) {
+export class ActivityStreamView extends React.PureComponent {
+  // eslint-disable-line react/prefer-stateless-function
+
+  // TODO: seperate to file and chang to key value
+  generateDepartmentColor(department) {
     switch (department) {
       case 1:
         return '#f44336';
@@ -21,28 +24,37 @@ function ActivityStreamView({ activities }) {
         return '#673ab7';
     }
   }
-  return (
-    <VerticalTimeline>
-      {console.log(activities.activities)}
-      {activities.map(({ type, description, department, name, date }) => (
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          date={date}
-          iconStyle={{
-            background: generateDepartmentColor(department),
-            color: 'black',
-          }}
-          icon={<ActivityIconView type={type} department={department} />}
-        >
-          <ActivityView description={description} name={name} />
-        </VerticalTimelineElement>
-      ))}
-    </VerticalTimeline>
-  );
+
+  componentDidMount() {
+    this.props.onLoad();
+  }
+
+  render() {
+    const { activities } = this.props;
+
+    return (
+      <VerticalTimeline>
+        {activities.map(({ type, description, department, name, date }) => (
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            date={date}
+            iconStyle={{
+              background: this.generateDepartmentColor(department),
+              color: 'black',
+            }}
+            icon={<ActivityIconView type={type} />}
+          >
+            <ActivityCardView description={description} name={name} />
+          </VerticalTimelineElement>
+        ))}
+      </VerticalTimeline>
+    );
+  }
 }
 
 ActivityStreamView.propTypes = {
   activities: PropTypes.array,
+  onLoad: PropTypes.func,
 };
 
 export default ActivityStreamView;

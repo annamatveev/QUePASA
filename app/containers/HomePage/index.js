@@ -13,31 +13,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 import 'react-vertical-timeline-component/style.min.css';
-import ActivityStreamView from '../../components/ActivityStreamView';
-
-const activities = [
-  {
-    type: 1,
-    description: 'hiii',
-    department: 1,
-    name: 'Anna',
-    date: '2018',
-  },
-  {
-    type: 2,
-    description: 'holaaa',
-    department: 2,
-    name: 'Elad',
-    date: '2018',
-  },
-  {
-    type: 3,
-    description: 'helloooo',
-    department: 3,
-    name: 'Daniel',
-    date: '2018',
-  },
-];
+import ActivityStream from '../ActivityStream';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class HomePage extends React.PureComponent {
@@ -45,7 +21,7 @@ export default class HomePage extends React.PureComponent {
     return (
       <div>
         <FormattedMessage {...messages.header} />
-        <ActivityStreamView activities={activities} />
+        <ActivityStream />
       </div>
     );
   }

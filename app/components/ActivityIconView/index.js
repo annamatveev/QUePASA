@@ -1,21 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function ActivityIconView({ type, department }) {
+function ActivityIconView({ type }) {
   return (
     <div>
-      <div>
-        {type}
-        <br />
-        {department}
-      </div>
+      <div>{type}</div>
     </div>
   );
 }
 
 ActivityIconView.propTypes = {
   type: PropTypes.string,
-  department: PropTypes.string,
 };
 
 export default ActivityIconView;
