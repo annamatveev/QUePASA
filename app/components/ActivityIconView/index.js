@@ -15,7 +15,7 @@ const IconWrapper = styled.div`
 `;
 
 export class ActivityIconView extends React.PureComponent {
-  // TODO: seperate to file and chang to key value
+  // TODO: seperate to file
   convertToMaterialIcon(department) {
     const iconMap = {
       'Bug fix': 'build',

@@ -17,12 +17,21 @@ const StyledVerticalTimeline = styled(VerticalTimeline)`
     padding-left: 90px !important;
     font-size: 14px !important;
   }
+  .vertical-timeline-element-content {
+    border-top: 3px solid #2196f3;
+  }
+`;
+
+const StyledVerticalTimelineElement = styled(VerticalTimelineElement)`
+  .vertical-timeline-element-content {
+    border-top: 3px solid ${props => props.color || '#2196f3'};
+  }
 `;
 
 export class ActivityStreamView extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
 
-  // TODO: seperate to file and chang to key value
+  // TODO: seperate to file
   generateDepartmentColor(department) {
     const colorMap = {
       Server: '#EF5350',
@@ -43,7 +52,8 @@ export class ActivityStreamView extends React.PureComponent {
     return (
       <StyledVerticalTimeline>
         {activities.map(({ type, description, department, name, date }) => (
-          <VerticalTimelineElement
+          <StyledVerticalTimelineElement
+            color={this.generateDepartmentColor(department)}
             className="vertical-timeline-element--work"
             date={date}
             iconStyle={{
@@ -57,7 +67,7 @@ export class ActivityStreamView extends React.PureComponent {
               name={name}
               department={department}
             />
-          </VerticalTimelineElement>
+          </StyledVerticalTimelineElement>
         ))}
       </StyledVerticalTimeline>
     );
