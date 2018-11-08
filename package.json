@@ -74,6 +74,7 @@
     "ip": "1.1.5",
     "loadable-components": "2.2.3",
     "lodash": "4.17.11",
+    "material-icons-react": "^1.0.4",
     "minimist": "1.2.0",
     "prop-types": "15.6.2",
     "react": "16.6.0",

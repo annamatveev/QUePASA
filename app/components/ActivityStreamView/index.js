@@ -5,24 +5,32 @@ import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component/dist-es6';
+
+import styled from 'styled-components';
 import ActivityCardView from '../ActivityCardView';
 import ActivityIconView from '../ActivityIconView';
+
+// Fix vertical timeline
+const StyledVerticalTimeline = styled(VerticalTimeline)`
+  .vertical-timeline-element-date {
+    padding-right: 90px !important;
+    padding-left: 90px !important;
+    font-size: 14px !important;
+  }
+`;
 
 export class ActivityStreamView extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
 
   // TODO: seperate to file and chang to key value
   generateDepartmentColor(department) {
-    switch (department) {
-      case 1:
-        return '#f44336';
-      case 2:
-        return '#3f51b5';
-      case 3:
-        return '#00b341';
-      default:
-        return '#673ab7';
-    }
+    const colorMap = {
+      Server: '#EF5350',
+      HR: '#AB47BC',
+      A: '#5C6BC0',
+    };
+
+    return colorMap[department] || '#26A69A';
   }
 
   componentDidMount() {
@@ -30,11 +38,10 @@ export class ActivityStreamView extends React.PureComponent {
   }
 
   render() {
-    console.log(this.props);
     const { activities } = this.props;
 
     return (
-      <VerticalTimeline>
+      <StyledVerticalTimeline>
         {activities.map(({ type, description, department, name, date }) => (
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
@@ -52,7 +59,7 @@ export class ActivityStreamView extends React.PureComponent {
             />
           </VerticalTimelineElement>
         ))}
-      </VerticalTimeline>
+      </StyledVerticalTimeline>
     );
   }
 }
