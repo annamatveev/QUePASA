@@ -45,7 +45,11 @@ export class ActivityStreamView extends React.PureComponent {
             }}
             icon={<ActivityIconView type={type} />}
           >
-            <ActivityCardView description={description} name={name} />
+            <ActivityCardView
+              description={description}
+              name={name}
+              department={department}
+            />
           </VerticalTimelineElement>
         ))}
       </VerticalTimeline>
