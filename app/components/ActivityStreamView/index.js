@@ -35,8 +35,8 @@ export class ActivityStreamView extends React.PureComponent {
   generateDepartmentColor(department) {
     const colorMap = {
       Server: '#26A69A',
-      HR: '#7E57C2',
-      A: '#42A5F5',
+      HR: '#e25041',
+      A: '#ee762f',
     };
 
     return colorMap[department] || '#66BB6A';
