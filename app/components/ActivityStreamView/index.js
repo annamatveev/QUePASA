@@ -34,12 +34,12 @@ export class ActivityStreamView extends React.PureComponent {
   // TODO: seperate to file
   generateDepartmentColor(department) {
     const colorMap = {
-      Server: '#EF5350',
-      HR: '#AB47BC',
-      A: '#5C6BC0',
+      Server: '#26A69A',
+      HR: '#7E57C2',
+      A: '#42A5F5',
     };
 
-    return colorMap[department] || '#26A69A';
+    return colorMap[department] || '#66BB6A';
   }
 
   componentDidMount() {

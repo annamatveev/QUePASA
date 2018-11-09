@@ -32,7 +32,7 @@ export class ActivityIconView extends React.PureComponent {
       <IconWrapper>
         <MaterialIcon
           icon={this.convertToMaterialIcon(type)}
-          size={24}
+          size={25}
           invert
         />
       </IconWrapper>
