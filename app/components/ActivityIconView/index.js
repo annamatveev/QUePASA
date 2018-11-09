@@ -5,8 +5,8 @@ import styled from 'styled-components';
 
 const IconWrapper = styled.div`
   display: block;
-  width: 24px;
-  height: 24px;
+  width: 25px;
+  height: 25px;
   position: relative;
   left: 50%;
   top: 50%;
