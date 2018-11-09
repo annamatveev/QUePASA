@@ -76,7 +76,9 @@ const IntroductionText = styled.span`
   font-size: 3vw;
 
   @media (min-width: 1000px) {
+    text-align: left;
     margin-top: 40px;
+    margin-right: 40px;
     width: 240px;
     font-size: 40px;
   }

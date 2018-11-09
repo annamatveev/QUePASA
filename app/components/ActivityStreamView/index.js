@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import toMaterialStyle from 'material-color-hash';
 
 import {
   VerticalTimeline,
@@ -31,35 +32,20 @@ const StyledVerticalTimelineElement = styled(VerticalTimelineElement)`
 export class ActivityStreamView extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
 
-  // TODO: seperate to file
-  generateDepartmentColor(department) {
-    const colorMap = {
-      Server: '#26A69A',
-      HR: '#e25041',
-      A: '#ee762f',
-    };
-
-    return colorMap[department] || '#66BB6A';
-  }
-
   componentDidMount() {
     this.props.onLoad();
   }
 
   render() {
     const { activities } = this.props;
-
     return (
       <StyledVerticalTimeline>
         {activities.map(({ type, description, department, name, date }) => (
           <StyledVerticalTimelineElement
-            color={this.generateDepartmentColor(department)}
+            color={toMaterialStyle(department, '200').backgroundColor}
             className="vertical-timeline-element--work"
             date={date}
-            iconStyle={{
-              background: this.generateDepartmentColor(department),
-              color: 'black',
-            }}
+            iconStyle={toMaterialStyle(department, '200')}
             icon={<ActivityIconView type={type} />}
           >
             <ActivityCardView
