@@ -16,6 +16,7 @@ import ActivityStream from '../ActivityStream';
 import yeomanImage from '../../images/maracas.png';
 import buildingRocketImage from '../../images/building.png';
 import byeImage from '../../images/bottom-sticker.png';
+import arrowImage from '../../images/curly-dotted-arrow.png';
 
 const Page = styled.span`
   overflow: hidden;
@@ -41,6 +42,8 @@ const Header = styled.div`
   width: 100%;
   z-index: 1;
   position: fixed;
+  display: flex;
+  justify-content: space-between;
 `;
 
 const LogoName = styled.span`
@@ -119,16 +122,74 @@ const FooterText = styled.span`
   }
 `;
 
+const ArrowImage = styled.img`
+  align-self: flex-start;
+  height: 160px;
+  margin: 70px 0 0 0;
+  padding-top: 10px;
+  right: 70px;
+  position: absolute;
+
+  @media (max-width: 1000px) {
+    display: none;
+  }
+`;
+
+const AddButton = styled.div`
+  color: white;
+  margin: 12px;
+  padding: 10px;
+  border-radius: 5%;
+  border: 1px dashed white;
+  text-transform: uppercase;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  position: relative;
+  padding: 10px 0;
+  width: 110px;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #5aadbb;
+  border: none;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+  }
+  &:hover:after {
+    width: 120%;
+    background-color: rgba(255, 255, 255, 0);
+
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+  }
+`;
+
 /* eslint-disable react/prefer-stateless-function */
 export default class HomePage extends React.PureComponent {
   render() {
     return (
       <Page>
         <Header>
-          <LogoImage>
-            <img src={yeomanImage} alt="logo" />
-          </LogoImage>
-          <LogoName>QUéPASA</LogoName>
+          <span>
+            <LogoImage>
+              <img src={yeomanImage} alt="logo" />
+            </LogoImage>
+            <LogoName>QUéPASA</LogoName>
+          </span>
+          <AddButton>Add Event</AddButton>
         </Header>
         <Introduction>
           <IntroductionText>what we built here last week?</IntroductionText>
@@ -136,6 +197,7 @@ export default class HomePage extends React.PureComponent {
             src={buildingRocketImage}
             alt="building something"
           />
+          <ArrowImage src={arrowImage} alt="arrow" />
         </Introduction>
         <ActivityStream />
         <Footer>
