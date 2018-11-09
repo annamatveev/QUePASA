@@ -18,8 +18,8 @@ export class ActivityIconView extends React.PureComponent {
   // TODO: seperate to file
   convertToMaterialIcon(department) {
     const iconMap = {
-      'Bug fix': 'build',
-      Feature: 'star',
+      'Bug fix': 'bug_report',
+      Feature: 'wb_incandescent',
       Hire: 'person',
     };
     return iconMap[department] || 'check';

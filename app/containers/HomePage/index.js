@@ -14,7 +14,12 @@ import 'react-vertical-timeline-component/style.min.css';
 import styled from 'styled-components';
 import ActivityStream from '../ActivityStream';
 import yeomanImage from '../../images/maracas.png';
-import buildingRocket from '../../images/building.png';
+import buildingRocketImage from '../../images/building.png';
+import byeImage from '../../images/bottom-sticker.png';
+
+const Page = styled.span`
+  overflow: hidden;
+`;
 
 const LogoImage = styled.span`
   margin-left: 10px;
@@ -84,11 +89,41 @@ const IntroductionText = styled.span`
   }
 `;
 
+const Footer = styled.div`
+  display: flex;
+  align-items: center;
+  background: #222;
+  height: 100px;
+  position: relative;
+`;
+
+const FooterImage = styled.img`
+  height: 160px;
+  align-self: flex-end;
+  margin: 0 0 0 10px;
+  padding-top: 10px;
+`;
+
+const FooterText = styled.span`
+  margin-left: 20px;
+
+  color: white;
+  width: 250px;
+  & > a {
+    color: inherit;
+    text-decoration: unset;
+    cursor: pointer;
+    span {
+      font-weight: bold;
+    }
+  }
+`;
+
 /* eslint-disable react/prefer-stateless-function */
 export default class HomePage extends React.PureComponent {
   render() {
     return (
-      <div>
+      <Page>
         <Header>
           <LogoImage>
             <img src={yeomanImage} alt="logo" />
@@ -97,10 +132,21 @@ export default class HomePage extends React.PureComponent {
         </Header>
         <Introduction>
           <IntroductionText>what we built here last week?</IntroductionText>
-          <IntroductionImage src={buildingRocket} alt="logo" />
+          <IntroductionImage
+            src={buildingRocketImage}
+            alt="building something"
+          />
         </Introduction>
         <ActivityStream />
-      </div>
+        <Footer>
+          <FooterImage src={byeImage} alt="footer" />
+          <FooterText>
+            <a href="http://hackertyper.com/" target="_blank">
+              Bye! Show your love for <span>QUéPASA</span>
+            </a>
+          </FooterText>
+        </Footer>
+      </Page>
     );
   }
 }
