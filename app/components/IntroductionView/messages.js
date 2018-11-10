@@ -11,6 +11,6 @@ export const scope = 'app.components.IntroductionView';
 export default defineMessages({
   introductionTitle: {
     id: `${scope}.introduction-title`,
-    defaultMessage: "So, we've been super-busy building our spaceship",
+    defaultMessage: "So, we've been super-busy building our masterpiece",
   },
 });

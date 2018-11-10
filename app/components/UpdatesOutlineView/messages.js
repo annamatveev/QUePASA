@@ -11,7 +11,7 @@ export const scope = 'app.components.UpdatesOutlineView';
 export default defineMessages({
   newUpdatesLabel: {
     id: `${scope}.updates-label`,
-    defaultMessage: 'Things happened this week',
+    defaultMessage: 'Epic things happened this week',
   },
   totalTeamsLabel: {
     id: `${scope}.updates-label`,

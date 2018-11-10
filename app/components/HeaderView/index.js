@@ -5,14 +5,16 @@ import { FormattedMessage } from 'react-intl';
 import MaterialIcon from 'material-icons-react';
 import Headroom from 'react-headroom';
 import messages from './messages';
-import logoImage from '../../images/maracas.png';
+import logoImage from '../../images/rocket.png';
 
 const LogoImage = styled.img`
   margin-left: 10px;
   z-index: 2;
   position: relative;
   height: 100px;
-  margin-top: -15px;
+  width: 100px;
+  object-fit: scale-down;
+  margin-top: -10px;
   border-radius: 100%;
   border: 2px solid black;
   background: white;
@@ -33,7 +35,7 @@ const TopBar = styled.div`
   z-index: 1;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 `;
 
 const LogoName = styled.span`
