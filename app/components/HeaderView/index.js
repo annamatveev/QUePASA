@@ -94,9 +94,7 @@ function HeaderView() {
   return (
     <Headroom
       style={{
-        webkitTransition: 'all .5s ease-in-out',
-        mozTransition: 'all .5s ease-in-out',
-        oTransition: 'all .5s ease-in-out',
+        zIndex: '4',
         transition: 'all .5s ease-in-out',
       }}
     >

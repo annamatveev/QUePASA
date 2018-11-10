@@ -1,9 +1,3 @@
-/**
- *
- * UpdateMetricView
- *
- */
-
 import React from 'react';
 // import PropTypes from 'prop-types';
 // import styled from 'styled-components';
@@ -31,7 +25,8 @@ const UpdatesCount = styled.span`
 
   @media (max-width: 1100px) {
     transition: all 0.5s;
-    font-size: 12px;
+    font-size: 18px;
+    line-height: 22px;
     margin: 0 4px 0 32px;
   }
 `;
@@ -49,7 +44,7 @@ export default ({ number, label }) => (
   <UpdateMetric>
     <UpdatesCount>
       <AnimatedNumber
-        component="text"
+        component="div"
         value={number}
         style={{
           transition: '0.8s ease-in',

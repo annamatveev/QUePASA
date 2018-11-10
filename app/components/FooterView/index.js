@@ -9,7 +9,7 @@ import styled from 'styled-components';
 
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
-import footerImage from '../../images/bottom-sticker.png';
+import footerImage from '../../images/bottom-sticker-yeoman.png';
 
 const Footer = styled.div`
   display: flex;

@@ -13,9 +13,10 @@ import React from 'react';
 import 'react-vertical-timeline-component/style.min.css';
 import styled from 'styled-components';
 
-import Header from 'components/HeaderView';
-import Footer from 'components/FooterView';
-import Introduction from 'components/IntroductionView';
+import HeaderView from 'components/HeaderView';
+import FooterView from 'components/FooterView';
+import IntroductionView from 'components/IntroductionView';
+import BadgesView from 'components/BadgesView';
 import ActivityStream from '../ActivityStream';
 
 const Page = styled.span`
@@ -27,10 +28,11 @@ export default class HomePage extends React.PureComponent {
   render() {
     return (
       <Page>
-        <Header />
-        <Introduction />
+        <HeaderView />
+        <IntroductionView />
+        <BadgesView />
         <ActivityStream />
-        <Footer />
+        <FooterView />
       </Page>
     );
   }
