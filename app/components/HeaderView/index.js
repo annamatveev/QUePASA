@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { FormattedMessage } from 'react-intl';
 import MaterialIcon from 'material-icons-react';
+import Headroom from 'react-headroom';
 import messages from './messages';
 import logoImage from '../../images/maracas.png';
 
@@ -30,9 +31,9 @@ const TopBar = styled.div`
   height: 70px;
   width: 100%;
   z-index: 1;
-  position: fixed;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 15px;
 `;
 
 const LogoName = styled.span`
@@ -89,18 +90,27 @@ const AddButton = styled.div`
 
 function HeaderView() {
   return (
-    <TopBar>
-      <span>
-        <LogoImage src={logoImage} alt="logo" />
-        <LogoName>
-          <FormattedMessage {...messages.appName} />
-        </LogoName>
-      </span>
-      <AddButton>
-        <MaterialIcon icon="add" invert size={14} />
-        add activity
-      </AddButton>
-    </TopBar>
+    <Headroom
+      style={{
+        webkitTransition: 'all .5s ease-in-out',
+        mozTransition: 'all .5s ease-in-out',
+        oTransition: 'all .5s ease-in-out',
+        transition: 'all .5s ease-in-out',
+      }}
+    >
+      <TopBar>
+        <span>
+          <LogoImage src={logoImage} alt="logo" />
+          <LogoName>
+            <FormattedMessage {...messages.appName} />
+          </LogoName>
+        </span>
+        <AddButton>
+          <MaterialIcon icon="add" invert size={14} />
+          add activity
+        </AddButton>
+      </TopBar>
+    </Headroom>
   );
 }
 

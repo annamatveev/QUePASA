@@ -9,6 +9,7 @@ import arrowImage from '../../images/curly-dotted-arrow.png';
 const Introduction = styled.div`
   background-color: #5aadbb;
   height: 400px;
+  padding-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,11 +29,10 @@ const IntroductionImage = styled.img`
 const ArrowImage = styled.img`
   align-self: flex-start;
   height: 160px;
-  margin: 70px 0 0 0;
+  margin: 10px 0 0 0;
   padding-top: 10px;
   right: 70px;
   position: absolute;
-  transition: all 0.5s;
 
   @media (max-width: 1200px) {
     display: none;

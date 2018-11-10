@@ -19,13 +19,15 @@ const UpdateMetric = styled.span`
   @media (max-width: 1100px) {
     flex-direction: row;
   }
+  margin: 16px;
 `;
 
 const UpdatesCount = styled.span`
-  font-size: 100px;
-  font-weight: bold;
+  font-size: 150px;
+  line-height: 150px;
   color: white;
   transition: all 0.5s;
+  font-family: 'Indie Flower', cursive;
 
   @media (max-width: 1100px) {
     transition: all 0.5s;
@@ -36,8 +38,10 @@ const UpdatesCount = styled.span`
 
 const UpdatesLabel = styled.span`
   text-transform: uppercase;
-  font-size: 12px;
-  color: #ffffff66;
+  font-family: 'Indie Flower', cursive;
+
+  font-size: 16px;
+  color: #fffffff6;
   display: inline-block;
   white-space: nowrap;
 `;
