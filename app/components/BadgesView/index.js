@@ -8,8 +8,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 import BadgeView from 'components/BadgeView';
+
 const Badges = styled.div`
-  height: 100px;
+  min-height: 100px;
   width: 90%;
   margin: 0 auto;
   margin-top: 64px;
@@ -17,6 +18,7 @@ const Badges = styled.div`
 
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 `;
 
 function BadgesView() {

@@ -8,20 +8,21 @@ import styled from 'styled-components';
 
 const UpdateMetric = styled.span`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
 
   @media (max-width: 1100px) {
     flex-direction: row;
   }
-  margin: 16px;
 `;
 
-const UpdatesCount = styled.span`
+const UpdatesCount = styled.div`
   font-size: 150px;
   line-height: 150px;
   color: white;
   transition: all 0.5s;
   font-family: 'Indie Flower', cursive;
+  align-text: right;
 
   @media (max-width: 1100px) {
     transition: all 0.5s;
@@ -31,14 +32,19 @@ const UpdatesCount = styled.span`
   }
 `;
 
-const UpdatesLabel = styled.span`
+const UpdatesLabel = styled.div`
   text-transform: uppercase;
   font-family: 'Indie Flower', cursive;
-
-  font-size: 16px;
+  width: 140px;
+  font-size: 18px;
   color: #fffffff6;
   display: inline-block;
-  white-space: nowrap;
+  white-space: pre-wrap;
+  margin-left: 8px;
+
+  @media (max-width: 1100px) {
+    width: 315px;
+  }
 `;
 export default ({ number, label }) => (
   <UpdateMetric>

@@ -7,6 +7,7 @@ import messages from './messages';
 const UpdatesSummary = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-top: 16px;
 
   @media (max-width: 1100px) {
     justify-content: center;

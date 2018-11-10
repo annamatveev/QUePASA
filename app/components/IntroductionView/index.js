@@ -9,11 +9,16 @@ import arrowImage from '../../images/curly-dotted-arrow.png';
 const Introduction = styled.div`
   background-color: #5aadbb;
   height: 400px;
-  padding-top: 10px;
+  padding-top: 8px;
+  padding-right: 64px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+
+  @media (max-width: 1100px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `;
 
 const IntroductionImage = styled.img`
@@ -23,6 +28,7 @@ const IntroductionImage = styled.img`
   @media (max-width: 1100px) {
     margin-bottom: -40px;
     height: 250px;
+    align-self: center;
   }
 `;
 
@@ -42,6 +48,7 @@ const ArrowImage = styled.img`
 const Outline = styled.div`
   display: flex;
   flex-direction: column;
+  margin-left: 64px;
 `;
 
 export default () => (

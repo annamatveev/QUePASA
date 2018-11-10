@@ -5,7 +5,7 @@ import HexagonView from 'components/HexagonView';
 import styled from 'styled-components';
 
 const Badge = styled.div`
-  margin: 0 32px 0 32px;
+  margin: 16px 32px 0 32px;
 `;
 
 const TeamUpdateCount = styled.div`
