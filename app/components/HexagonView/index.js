@@ -12,6 +12,7 @@ const Hexagon = styled.div`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-left: solid 5px #fefdff;
   border-right: solid 5px #fefdff;
+  transition: all 0.3s;
 
   &:before,
   &:after {
@@ -56,6 +57,10 @@ const Hexagon = styled.div`
     text-align: center;
     padding-top: 7px;
     font-family: 'Open Sans Condensed', sans-serif;
+  }
+
+  &:hover {
+    transform: scale(1.2);
   }
 `;
 
