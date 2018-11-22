@@ -22,7 +22,7 @@ const IntroductionText = styled.div`
     text-align: left;
     margin-top: 40px;
     margin-right: 40px;
-    width: 500px;
+    width: 520px;
     font-size: 35px;
   }
 `;

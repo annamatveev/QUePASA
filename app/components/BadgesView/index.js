@@ -16,9 +16,7 @@ const BadgesWrapper = styled.div`
 
 const Badges = styled.div`
   min-height: 100px;
-  margin-top: 64px;
-  margin-bottom: 64px;
-  margin: 0 auto;
+  margin: 30px auto 0;
 
   display: flex;
   justify-content: center;

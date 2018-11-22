@@ -30,7 +30,7 @@ export default class HomePage extends React.PureComponent {
       <Page>
         <HeaderView />
         <IntroductionView />
-        <BadgesView />
+        {/* <BadgesView /> */}
         <ActivityStream />
         <FooterView />
       </Page>

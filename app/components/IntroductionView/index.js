@@ -55,7 +55,7 @@ export default () => (
   <Introduction>
     <Outline>
       <IntroductionTextView />
-      <UpdatesOutlineView />
+      {/* <UpdatesOutlineView /> */}
     </Outline>
     <IntroductionImage src={introductionImage} alt="building something" />
     <ArrowImage src={arrowImage} alt="arrow" />
